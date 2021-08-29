@@ -8,7 +8,7 @@ ArrayofString = f.read().splitlines() #enter file lines into array
 ArrayOfFloat = np.asarray(ArrayofString, dtype=np.float64, order='C')
 
 import soundfile as sf
-sf.write('sound.wav', ArrayOfFloat, 48000)
+sf.write('sound.wav', ArrayOfFloat, 4800)
 
 #data, sampleRate = sf.read('sound.wav')
 
