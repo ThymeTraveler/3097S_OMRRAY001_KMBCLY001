@@ -1,7 +1,7 @@
 import numpy as np
 import wave
 
-fileName = "input.txt"
+fileName = "bigInput.txt"
 f = open(fileName, "r") #open file for reading
 ArrayofString = f.read().splitlines() #enter file lines into array
 
@@ -18,8 +18,8 @@ import subprocess
 subprocess.call(cmd, shell=True)
 
 #the commented out block below would be used for extracting the information from the mp3
-#import audio2numpy as a2n
-#x,sr=a2n.audio_from_file("sound.mp3")
+import audio2numpy as a2n
+x,sr=a2n.audio_from_file("sound.mp3")
 
-#for i in x:
- #   print(i)
+for i in x:
+    print(i)
