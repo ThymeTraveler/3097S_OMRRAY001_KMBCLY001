@@ -1,7 +1,7 @@
 import numpy as np
 import wave
 
-fileName = "bigInput.txt"
+fileName = "rand2000.txt"
 f = open(fileName, "r") #open file for reading
 ArrayofString = f.read().splitlines() #enter file lines into array
 
