@@ -1,25 +1,31 @@
 import numpy as np
 import wave
+import time
 
-fileName = "rand2000.txt"
+
+
+fileName = "rand10000.txt"
 f = open(fileName, "r") #open file for reading
 ArrayofString = f.read().splitlines() #enter file lines into array
 
-ArrayOfFloat = np.asarray(ArrayofString, dtype=np.float64, order='C')
+#begin timing after intial file load in (as to only measure speed of algorithim)
+begin=time.time()
 
+ArrayOfFloat = np.asarray(ArrayofString, dtype=np.float64, order='C') #converts array from the line above to a numpy array of float
+
+#this block writes the ArrayOfFloat to a .wav audio file (this is also )
 import soundfile as sf
 sf.write('sound.wav', ArrayOfFloat, 48000)
 
+#This line below is used to extract the data in the .wav to an array - only useful for validation
 #data, sampleRate = sf.read('sound.wav')
 
+#This block converts the .wav file into an mp3 and applies the appropriate compression 
 wav = 'sound.wav'
 cmd = 'lame --preset standard %s' % wav
 import subprocess
 subprocess.call(cmd, shell=True)
 
-#the commented out block below would be used for extracting the information from the mp3
-import audio2numpy as a2n
-x,sr=a2n.audio_from_file("sound.mp3")
 
-for i in x:
-     print(i)
+print(str(time.time()-begin)+ " seconds") #end timer and print
+
