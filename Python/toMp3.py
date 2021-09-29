@@ -20,7 +20,7 @@ sf.write('sound.wav', ArrayOfFloat, 48000)
 #This line below is used to extract the data in the .wav to an array - only useful for validation
 #data, sampleRate = sf.read('sound.wav')
 
-#This block converts the .wav file into an mp3 and applies the appropriate compression 
+#This block converts the .wav file into an mp3 and applies the appropriate compression (uses BASH)
 wav = 'sound.wav'
 cmd = 'lame --preset standard %s' % wav
 import subprocess
