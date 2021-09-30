@@ -1,7 +1,7 @@
 import numpy as np
 import time
 
-fileName = "rand10000.txt"
+fileName = "100kitem.txt"
 f = open(fileName, "r") #open file for reading
 ArrayofString = f.read().splitlines() #enter file lines into array
 
