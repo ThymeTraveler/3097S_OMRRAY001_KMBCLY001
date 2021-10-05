@@ -1,0 +1,83 @@
+[33mcommit f02494e81c4a7ae4ef15021bf9afcc17d5cd1bcd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Mon Oct 4 23:14:06 2021 +0100
+
+    demo1 added
+
+[33mcommit fa28b46b21ea8905791a2f200ef13690c7139294[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Mon Oct 4 20:33:40 2021 +0100
+
+    TCP test code added
+
+[33mcommit ee3ba1b3cb359073da25b64302fb87737d587062[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Thu Sep 30 19:46:12 2021 +0100
+
+    changed folder names
+
+[33mcommit 4e5032a890d781dc2ec4a43c3b3a157ea7467bb2[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Wed Sep 29 22:23:09 2021 +0100
+
+    added more comments
+
+[33mcommit 24394b00e884c16270fec4e76b821ac13a65f430[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Wed Sep 29 21:28:45 2021 +0100
+
+    some debugging + testing done
+
+[33mcommit 6ce5fd4613dfc4ae907c8f4d304f9500a81de4c6[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Wed Sep 22 00:34:40 2021 +0100
+
+    Did some FFT stuff
+
+[33mcommit 2ca7bda886a2addc2a32dd5112ee60b18591fc33[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 21:15:15 2021 +0100
+
+    random data test on pi
+
+[33mcommit 2236bf8bff6bd25fafe5340131895b5f2e3f62e7[m
+Author: rayhaan2120 <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 22:05:09 2021 +0200
+
+    added random test
+
+[33mcommit 78a30bc3d4f061b0ec24ea8595ad30a5630bfdc6[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 21:01:01 2021 +0100
+
+    tests done on pi
+
+[33mcommit ed305d7c9d3b1b4c7e20105d49bfaf4f99a5eaef[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 21:27:30 2021 +0200
+
+    Added large test file
+
+[33mcommit 4c61c739aa1d8d2a34af595bd47d60dfcf30db73[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 21:15:02 2021 +0200
+
+    mp3 compression now working
+
+[33mcommit 4982d3a557a1857cd52a78c228fb56eb2105ff0f[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 19:22:33 2021 +0100
+
+    added mp3 conversion. not compressing further
+
+[33mcommit 10cf72b0408a3014471d4d6867a2dc99f4a01f45[m
+Author: Rayhaan Omar <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 18:16:16 2021 +0200
+
+    .wav compression working
+
+[33mcommit 8f87a88b47c405c6539ec91bf5731f3b98715273[m
+Author: rayhaan2120 <rayhaan2120@gmail.com>
+Date:   Sun Aug 29 17:14:27 2021 +0200
+
+    First commit
