@@ -324,7 +324,7 @@ void icm20948MagRead(int16_t* ps16X, int16_t* ps16Y, int16_t* ps16Z)
     static ICM20948_ST_AVG_DATA sstAvgBuf[3];
     while( counter>0 )
     {
-        bcm2835_delay(10);
+        //bcm2835_delay(10);
         icm20948ReadSecondary( I2C_ADD_ICM20948_AK09916|I2C_ADD_ICM20948_AK09916_READ, 
                                     REG_ADD_MAG_ST2, 1, u8Data);
         
@@ -371,7 +371,7 @@ void icm20948ReadSecondary(uint8_t u8I2CAddr, uint8_t u8RegAddr, uint8_t u8Len, 
     u8Temp = I2C_ReadOneByte(REG_ADD_USER_CTRL);
     u8Temp |= REG_VAL_BIT_I2C_MST_EN;
     I2C_WriteOneByte( REG_ADD_USER_CTRL, u8Temp);
-    bcm2835_delay(5);
+    //bcm2835_delay(5);
     u8Temp &= ~REG_VAL_BIT_I2C_MST_EN;
     I2C_WriteOneByte( REG_ADD_USER_CTRL, u8Temp);
     
@@ -404,7 +404,7 @@ void icm20948WriteSecondary(uint8_t u8I2CAddr, uint8_t u8RegAddr, uint8_t u8data
   u8Temp = I2C_ReadOneByte(REG_ADD_USER_CTRL);
   u8Temp |= REG_VAL_BIT_I2C_MST_EN;
   I2C_WriteOneByte( REG_ADD_USER_CTRL, u8Temp);
-  bcm2835_delay(5);
+  //bcm2835_delay(5);
   u8Temp &= ~REG_VAL_BIT_I2C_MST_EN;
   I2C_WriteOneByte( REG_ADD_USER_CTRL, u8Temp);
 
@@ -445,7 +445,7 @@ void icm20948GyroOffset(void)
     s32TempGx += s16Gx;
     s32TempGy += s16Gy;
     s32TempGz += s16Gz;
-    bcm2835_delay(10);
+    //bcm2835_delay(10);
   }
   gstGyroOffset.s16X = s32TempGx >> 5;
   gstGyroOffset.s16Y = s32TempGy >> 5;
