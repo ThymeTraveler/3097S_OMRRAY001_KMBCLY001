@@ -14,12 +14,12 @@ dllabspath = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + dll_name
 lib = cdll.LoadLibrary(dllabspath)
 getValues = lib.getValues 
 getValues.restype = ndpointer(dtype=c_float,
-                          shape=(10,))
+                          shape=(200,))
 
 begin=time.time()
-result = getValues(c_int(10))
+result = getValues(c_int(200))
 print(result)
 print(str(time.time()-begin))
 
-# After testing this yields no noticable improvement. There does seem to be a bug where the function doesn't return all the values but there is no need to fix
-#the bug as using C provides no benefit and any further development would be a waste of time.
+# After testing this yields a small improvement, not sure if 14% is worth it for our use case. Python is just easier to use, but I did put a lot of work into 
+#getting this working

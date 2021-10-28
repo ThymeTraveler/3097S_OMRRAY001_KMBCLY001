@@ -7,4 +7,4 @@ ICM20948.o: ICM20948.c ICM20948.h
 clean:
 	rm main.o ICM20948.o ICM20948_DEMO
 shared:
-	gcc -fPIC -shared -o ICM20948.so ICM20948.c -lbcm2835 -lm -std=gnu99
+	gcc -fPIC -shared -o ICM20948.so ICM20948.c -lbcm2835 -lm -std=gnu99 -O2 -funroll-loops

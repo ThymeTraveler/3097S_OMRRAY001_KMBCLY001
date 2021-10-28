@@ -71,7 +71,8 @@ def encryptFile(filename, password,outputName):
     except Exception as e:
         print(e)
 
-def decryptFile(filePath, password):
+def decryptFile(filename, password):
+    filePath=Path(filename)
 
     logging.info("Started decoding: " + filePath.resolve().as_posix())
     
@@ -79,7 +80,7 @@ def decryptFile(filePath, password):
     
         hashObj = SHA256.new(password.encode('utf-8'))
         hkey = hashObj.digest()
-        DFP = Path(filePath.parent.resolve().as_posix() + "/" + vdecrypt(filePath.name, password)[:-4])
+        DFP = Path(filePath.parent.resolve().as_posix() + "/" + "output.mp3")
         
         if DFP.exists():
             DFP.unlink()
@@ -92,7 +93,7 @@ def decryptFile(filePath, password):
                 values = input_file.read(B_S*B_M)
 
         logging.info("Decoded: " + filePath.resolve().as_posix()[:-4])
-        logging.info("TO: " + DFP.resolve().as_posix() )
+        print("TO: " + DFP.resolve().as_posix() )
 
     except Exception as e:
         print(e)

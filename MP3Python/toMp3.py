@@ -4,7 +4,7 @@ import time
 
 
 
-fileName = "rand10000.txt"
+fileName = "csvMag.txt"
 f = open(fileName, "r") #open file for reading
 ArrayofString = f.read().splitlines() #enter file lines into array
 
