@@ -15,15 +15,18 @@ def testCSV(axes,acc,gyro):
     FTPstuff.send("input.csv")
 
 def method1(input,type):
-    #begin=time.time()
+    
     normalisingFactor = np.abs(input).max()  #normalising factor so that all values are between -1 and 1
     normal_array = input/normalisingFactor #normalising the array by dividing my the factor
+    begin=time.time()
     MP3stuff.compress(normal_array,type) #compress using mp3 method
+    print("compression took " + str(time.time()-begin))
     now = datetime.now() # Get the date and time for unique file name
     dt_string = now.strftime("%d-%m-%Y-%H-%M") # format date time string
     filenameNoExt=dt_string+"_"+str(n)+"_"+type +"_"+str(normalisingFactor)+"_"#file name is date-time_normalisingFactor_batchNo_sensorType
+    begin=time.time()
     AESstuff.encryptFile(type+".mp3","password",filenameNoExt) #Encrypt mp3 using AES
-    #print("compression and encryption took " + str(time.time()-begin))
+    print("encryption took " + str(time.time()-begin))
     FTPstuff.send(filenameNoExt+".enc") # send encrypted file over FTP
    
     
@@ -36,8 +39,8 @@ if __name__ == '__main__':
         begin=time.time() #start time
         values1,values2,values3=ICM20948.getValues(batchSize) # get values from IMU
         print("Data acquistion took " + str(time.time()-begin)) #print time taken for data acquisition
-        testCSV(values1,values2,values3) #send input values to FTP server in a csv files
-        #AESstuff.removeEncryptedFiles() #delete temp files from prev loop
+        testCSV(values1,values2,values3) #send input values to FTP server in a csv file
+        AESstuff.removeEncryptedFiles() #delete temp files from prev loop
         begin=time.time()
         x = threading.Thread(target=method1, args=(values1,"axes",)) #send each sensor's data to a different thread to be compressed
         x.start()
@@ -50,6 +53,6 @@ if __name__ == '__main__':
         x.join()#remove these joins if you want to continue collecting data during compression and encryption 
         y.join() #these joins are only useful for timing purposes 
         z.join()
-        print("compression + encryption took " + str(time.time()-begin))#will not work correctly without the joins
+        print("TOTAL compression + encryption + transmission took " + str(time.time()-begin))#will not work correctly without the joins
         running=False #remove this to collect data indefinitely
     
